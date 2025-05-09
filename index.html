@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang='es'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Maestro Enos - Rituales Espirituales</title>
+    <link href='https://fonts.googleapis.com/css2?family=Inter:wght@300;600;700&family=Inknut+Antiqua:wght@700&display=swap' rel='stylesheet'>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #840000;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+        
+        .header-bg {
+            position: relative;
+            width: 100%;
+            height: 786px;
+            background-image: url('../assets/images/img_imagefx_29_1.png');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .logo {
+            width: 668px;
+            max-width: 90%;
+            margin: 0 auto;
+            display: block;
+        }
+        
+        .main-title {
+            font-size: 40px;
+            font-weight: 700;
+            line-height: 48px;
+            text-align: center;
+            color: #ffffff;
+            max-width: 1144px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+        
+        .stats-bar {
+            width: 100%;
+            background-color: #4d0b00;
+            padding: 20px 0;
+            margin-top: 50px;
+            box-shadow: 0px 0px 15px #ff0000;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        
+        .stat-item {
+            background-color: #ffb600;
+            border-radius: 8px;
+            padding: 16px;
+            width: 250px;
+            height: 89px;
+            margin: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .stat-text {
+            font-size: 30px;
+            font-weight: 700;
+            line-height: 33px;
+            text-align: center;
+            color: #840000;
+        }
+        
+        .btn {
+            background-color: #ffb600;
+            color: #420000;
+            font-size: 16px;
+            font-weight: 600;
+            padding: 16px 24px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 5px 5px 12px #000000;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 5px 5px 15px #000000;
+        }
+        
+        .contact-btn {
+            position: absolute;
+            top: 87px;
+            right: 83px;
+        }
+        
+        .consult-btn {
+            margin: 20px auto;
+            display: block;
+        }
+        
+        .section-title {
+            font-size: 40px;
+            font-weight: 700;
+            line-height: 48px;
+            text-align: center;
+            color: #ffffff;
+            margin: 40px 0;
+            text-shadow: 0px 4px 9px #ff0000;
+        }
+        
+        .treatments-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 0 20px;
+            max-width: 1440px;
+            margin: 0 auto;
+        }
+        
+        .treatment-card {
+            width: 368px;
+            height: 487px;
+            position: relative;
+            margin-bottom: 30px;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .treatment-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .treatment-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        
+        .treatment-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+        }
+        
+        .treatment-title {
+            font-family: 'Inknut Antiqua', serif;
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 30px;
+            text-align: center;
+            color: #ffb600;
+            margin-bottom: 15px;
+        }
+        
+        .treatment-desc {
+            font-size: 16px;
+            font-weight: 300;
+            line-height: 24px;
+            text-align: center;
+            color: #ffffff;
+        }
+        
+        .why-choose-section {
+            padding: 40px 20px;
+            max-width: 1440px;
+            margin: 0 auto;
+        }
+        
+        .reason-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            gap: 20px;
+        }
+        
+        .reason-box {
+            background-color: #ffb600;
+            border-radius: 10px;
+            padding: 13px 10px;
+            width: 788px;
+            height: 69px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .reason-text {
+            font-size: 25px;
+            font-weight: 300;
+            line-height: 31px;
+            color: #4d0b00;
+            text-align: center;
+            width: 100%;
+        }
+        
+        .check-icon {
+            width: 69px;
+            height: 69px;
+            background-color: #4d0b00;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .check-icon img {
+            width: 34px;
+            height: 46px;
+        }
+        
+        .help-btn {
+            display: block;
+            width: 500px;
+            max-width: 90%;
+            margin: 40px auto;
+            padding: 15px;
+            font-size: 32px;
+        }
+        
+        .footer-bar {
+            width: 100%;
+            background-color: #4d0b00;
+            padding: 20px 0;
+            box-shadow: 0px 0px 15px #ff0000;
+            margin-bottom: 30px;
+        }
+        
+        .footer-text {
+            font-family: 'Inknut Antiqua', serif;
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 41px;
+            text-align: center;
+            color: #ffb600;
+            padding: 0 20px;
+        }
+        
+        .about-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            padding: 40px 20px;
+            max-width: 1440px;
+            margin: 0 auto;
+            gap: 30px;
+        }
+        
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+            font-size: 30px;
+            font-weight: 300;
+            line-height: 41px;
+            color: #ffffff;
+            max-width: 597px;
+        }
+        
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+            max-width: 560px;
+            position: relative;
+        }
+        
+        .about-img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        
+        .about-logo {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            max-width: 477px;
+        }
+        
+        .about-btn {
+            margin: 20px auto;
+            display: block;
+            width: 320px;
+            max-width: 90%;
+        }
+        
+        @media (max-width: 1200px) {
+            .contact-btn {
+                top: 20px;
+                right: 20px;
+            }
+            
+            .reason-box {
+                width: calc(100% - 90px);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-bg {
+                height: auto;
+                padding: 100px 0 50px;
+            }
+            
+            .logo {
+                width: 80%;
+            }
+            
+            .main-title {
+                font-size: 30px;
+                line-height: 36px;
+            }
+            
+            .stat-item {
+                width: 200px;
+            }
+            
+            .treatment-card {
+                width: 100%;
+                max-width: 368px;
+            }
+            
+            .reason-item {
+                flex-direction: column-reverse;
+            }
+            
+            .reason-box {
+                width: 100%;
+                height: auto;
+                padding: 15px;
+            }
+            
+            .check-icon {
+                margin-bottom: 10px;
+            }
+            
+            .about-section {
+                flex-direction: column;
+            }
+            
+            .about-text, .about-image {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header-bg">
+        <a href="#" class="btn contact-btn">CONTACTAR</a>
+        <img src="../assets/images/img_group_9.svg" alt="Maestro Enos Logo" class="logo">
+        <h1 class="main-title">MAESTRO ESPIRITUAL EN RITUALES DE PROSPERIDAD, APERTURA DE CAMINOS Y FORTUNA CONSTANTE.</h1>
+        <a href="#" class="btn consult-btn">CONSULTE AQUI</a>
+    </header>
+    
+    <div class="stats-bar">
+        <div class="stat-item">
+            <p class="stat-text">20 AÑOS<br>DE EXPERIENCIA</p>
+        </div>
+        <div class="stat-item">
+            <p class="stat-text">1,852+<br>PACIENTES</p>
+        </div>
+        <div class="stat-item">
+            <p class="stat-text">9<br>PAISES</p>
+        </div>
+        <div class="stat-item">
+            <p class="stat-text">90%<br>ASEGURADO</p>
+        </div>
+    </div>
+    
+    <section>
+        <h2 class="section-title">NUESTROS TRATAMIENTOS</h2>
+        <div class="treatments-grid">
+            <div class="treatment-card">
+                <img src="../assets/images/img_mask_group.png" alt="Pactos espirituales" class="treatment-img">
+                <div class="treatment-overlay">
+                    <h3 class="treatment-title">PACTOS</h3>
+                    <p class="treatment-desc">EXPERTO EN ACUEROS CON LUCIFER, ASEGURESE DE NO EXPERIMENTAR DE MAS DIFICULTADES Y BUSQUE SOLUCIONES</p>
+                </div>
+            </div>
+            
+            <div class="treatment-card">
+                <img src="../assets/images/img_mask_group.png" alt="Retiro de indeseables" class="treatment-img">
+                <div class="treatment-overlay">
+                    <h3 class="treatment-title">RETIRO<br>DE<br>INDESEABLES</h3>
+                    <p class="treatment-desc">ALEJAMOS A TODA TERCERA PERSONA QUE SE INTERPONGA EN SU RELACION DE PAREJA O CUALQUIER OTRO ASPECTO</p>
+                </div>
+            </div>
+            
+            <div class="treatment-card">
+                <img src="../assets/images/img_mask_group.png" alt="Endulzamientos" class="treatment-img">
+                <div class="treatment-overlay">
+                    <h3 class="treatment-title">ENDULZAMIENTOS</h3>
+                    <p class="treatment-desc">CON NUESTROS RITUALES PODEROSOS, PODEMOS INFLUIR EN LA MANERA DE SER DE ESA PERSONA QUE AMA</p>
+                </div>
+            </div>
+            
+            <div class="treatment-card">
+                <img src="../assets/images/img_mask_group.png" alt="Limpias espirituales" class="treatment-img">
+                <div class="treatment-overlay">
+                    <h3 class="treatment-title">LIMPIAS<br>ESPIRITUALES</h3>
+                    <p class="treatment-desc">ALEJO Y ELIMINO CUALQUIER PRESENCIA, ENTIDAD O INDIVIDUO, QUE INTERFIERA CON SU FELICIDAD O BIENESTAR FISICO Y MENTAL</p>
+                </div>
+            </div>
+            
+            <div class="treatment-card">
+                <img src="../assets/images/img_mask_group.png" alt="Regresos" class="treatment-img">
+                <div class="treatment-overlay">
+                    <h3 class="treatment-title">REGRESOS</h3>
+                    <p class="treatment-desc">CON MIS METODOS EFECTIVOS, PUEDO AYUDAR A RECONECTAR CON EL AMOR PERDIDO Y RECUPERAR LA RELACION QUE CREIA PERDIDA</p>
+                </div>
+            </div>
+            
+            <div class="treatment-card">
+                <img src="../assets/images/img_mask_group.png" alt="Prosperidad" class="treatment-img">
+                <div class="treatment-overlay">
+                    <h3 class="treatment-title">PROSPERIDAD</h3>
+                    <p class="treatment-desc">PERMITAME AYUDARLE A CONSEGUIR LO QUE SIEMPRE A ANHELADO, NUESTRO PROPOSITO ES BRINDAR APOYO A AQUELLOS QUE SE SIENTEN DESAMPARADOS</p>
+                </div>
+            </div>
+            
+            <div class="treatment-card">
+                <img src="../assets/images/img_mask_group.png" alt="Suerte y dinero" class="treatment-img">
+                <div class="treatment-overlay">
+                    <h3 class="treatment-title">SUERTE Y DINERO</h3>
+                    <p class="treatment-desc">LO AYUDO A POTENCIAR SUS POSIBILIDADES EN JUEGOS DE AZAR Y SORTEOS, BRINDANDOTE CONSEJOS Y NUMEROS</p>
+                </div>
+            </div>
+            
+            <div class="treatment-card">
+                <img src="../assets/images/img_mask_group.png" alt="Talismanes" class="treatment-img">
+                <div class="treatment-overlay">
+                    <h3 class="treatment-title">TALISMANES</h3>
+                    <p class="treatment-desc">ME ENCARGO DE CONSAGRAR, ENERGIZAR Y CARGAR DE MANERA POSITIVA AMULETOS Y GEMAS PRECIOSAS PARA BRINDARTE PROTECCION</p>
+                </div>
+            </div>
+            
+            <div class="treatment-card">
+                <img src="../assets/images/img_mask_group.png" alt="Amarres de todo tipo" class="treatment-img">
+                <div class="treatment-overlay">
+                    <h3 class="treatment-title">AMARRES DE TODO TIPO</h3>
+                    <p class="treatment-desc">UTILIZANDO MIS HABILIDADES RITUALES EFECTIVAS, LOGRAREMOS QUE LA PERSONA TE AME RAPIDAMENTE, SIN CAUSARLE NINGUN DAÑO</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="why-choose-section">
+        <h2 class="section-title">¿PORQUE ESCOGERNOS?</h2>
+        
+        <div class="reason-item">
+            <div class="reason-box">
+                <p class="reason-text">Nuestros tratamientos son totalmente seguros no tienen efectos secundarios o secuelas.</p>
+            </div>
+            <div class="check-icon">
+                <img src="../assets/images/img_icon.svg" alt="Check icon">
+            </div>
+        </div>
+        
+        <div class="reason-item">
+            <div class="reason-box">
+                <p class="reason-text">Trabajamos A Distancia y No Solemos Fallar En Nuestros Tratamientos</p>
+            </div>
+            <div class="check-icon">
+                <img src="../assets/images/img_icon.svg" alt="Check icon">
+            </div>
+        </div>
+        
+        <div class="reason-item">
+            <div class="reason-box">
+                <p class="reason-text">Realizamos Amarres De Amor Sin Importar Sexo, Tiempo O Distancia.</p>
+            </div>
+            <div class="check-icon">
+                <img src="../assets/images/img_icon.svg" alt="Check icon">
+            </div>
+        </div>
+        
+        <div class="reason-item">
+            <div class="reason-box">
+                <p class="reason-text">Nuestro índice de efectividad es muy alto, mira las estadisticas</p>
+            </div>
+            <div class="check-icon">
+                <img src="../assets/images/img_icon.svg" alt="Check icon">
+            </div>
+        </div>
+        
+        <button class="btn help-btn">QUIERO RECIBIR AYUDA</button>
+    </section>
+    
+    <div class="footer-bar">
+        <p class="footer-text">RECIBE LA AYUDA DE UN EXPERTO Y CONSIGUE LAS RESPUESTAS A TUS INQUIETUDES +57 3027955973</p>
+    </div>
+    
+    <section class="about-section">
+        <div class="about-text">
+            <p>Soy un profesional especializado en restaurar el amor, la salud, la prosperidad y la estabilidad financiera. Mi objetivo es ayudarte a mejorar distintos aspectos de tu vida, sin generar consecuencias negativas.</p>
+            <a href="#" class="btn about-btn">CONOCE MAS DE MI</a>
+        </div>
+        <div class="about-image">
+            <img src="../assets/images/img_imagefx_41_1.png" alt="Maestro Enos" class="about-img">
+            <img src="../assets/images/img_group_9.svg" alt="Maestro Enos Logo" class="about-logo">
+        </div>
+    </section>
+
+    <script>
+        // Add hover effects to treatment cards
+        const treatmentCards = document.querySelectorAll('.treatment-card');
+        
+        treatmentCards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-10px)';
+                card.style.boxShadow = '0 15px 30px rgba(0,0,0,0.3)';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0)';
+                card.style.boxShadow = '0 5px 15px rgba(0,0,0,0.1)';
+            });
+            
+            card.addEventListener('click', () => {
+                // Simulate opening a modal with treatment details
+                alert('Detalles del tratamiento: ' + card.querySelector('.treatment-title').textContent);
+            });
+        });
+        
+        // Add functionality to buttons
+        document.querySelector('.consult-btn').addEventListener('click', function(e) {
+            e.preventDefault();
+            alert('Iniciando consulta con Maestro Enos...');
+        });
+        
+        document.querySelector('.contact-btn').addEventListener('click', function(e) {
+            e.preventDefault();
+            alert('Contactando a Maestro Enos...');
+        });
+        
+        document.querySelector('.help-btn').addEventListener('click', function() {
+            alert('Solicitud de ayuda enviada. Nos pondremos en contacto contigo pronto.');
+        });
+        
+        document.querySelector('.about-btn').addEventListener('click', function(e) {
+            e.preventDefault();
+            alert('Conoce más sobre Maestro Enos y su trayectoria...');
+        });
+        
+        // Add phone number click functionality
+        document.querySelector('.footer-text').addEventListener('click', function() {
+            window.location.href = 'tel:+573027955973';
+        });
+    </script>
+</body>
+</html>
